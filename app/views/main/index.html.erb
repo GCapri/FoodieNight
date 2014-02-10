@@ -1,0 +1,31 @@
+<h1>Listing restaurants and ratings</h1>
+<!--<%= session[:user_id]  %>-->
+<h3>Welcome <%=@current_user.user_name%></h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+<%= form_for(@rating) do |f| %>
+<% @restaurants.each do |restaurant| %>
+
+<!--Foreach stmt which @rest ... represents instance variable "@" which is set by the controller |the formal 'restaurant'| ... e.g. LU LU Calling methods
+on that object.  The kind of object it is .. is a model object-->
+
+  <tr>
+    <td><%= link_to restaurant.restaurant_name, restaurant.restaurant_url %></td>
+	<td><%= get_rating_value_for_restaurant(restaurant)%></td>
+	<td><%= f.select(:my_rating,options_for_select([['Good', 1], ['Ok', 2], ['Poor', 3]])) %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

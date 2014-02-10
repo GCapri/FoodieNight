@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_date: 2013-01-25 23:03:31
+  deadline_date: 2013-01-25 23:03:31
+  restaurant_id: 1
+
+two:
+  event_date: 2013-01-25 23:03:31
+  deadline_date: 2013-01-25 23:03:31
+  restaurant_id: 1

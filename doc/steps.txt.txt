@@ -1,0 +1,7 @@
+rails generate scaffold User user_name:string user_password:string user_type:string user_email:string
+rails generate scaffold Restaurant restaurant_name:string restaurant_city:string restaurant_url:string
+rails generate scaffold Ranking my_ranking_value:integer restaurant_id:integer user_id:integer
+rails generate scaffold Rating my_rating:integer restaurant_id:integer user_id:integer
+rails generate scaffold Event event_date:datetime deadline_date:datetime restaurant_id:integer
+
+rake db:migrate

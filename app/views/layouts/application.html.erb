@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foodie</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- INSERTED THE LINKS BELOW TO EASE NAVIGATING FROM ONE PAGE TO ANTOHER DURING THE DEVELOPMENT PROCESS -->
+<!-- INSERTING THE LINKS AT THE APPLICATION LEVEL RESULTS IN ALL LOWER LEVEL VIEW PAGES INHERITING LINK PROPERTIES -->
+
+<table>
+  <tr>
+    <th><a href="/restaurants"> Restaurants </a></th>
+	<th><a href="/ratings"> Ratings </a></th>
+	<th><a href="/rankings"> Rankings </a></th>
+	<th><a href="/users"> Users </a></th>
+	<th><a href="/events"> Events </a></th>
+	<th><a href="/signin"> SignIn </a></th>
+	<th><a href="/signout"> SignOut </a></th>
+	<th><a href="/welcome"> Welcome </a></th>
+  </tr>
+</table>
+
+
+<%= yield %>
+
+</body>
+</html>
