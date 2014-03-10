@@ -1,7 +1,7 @@
 class Rating < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
-  validates_numericality_of :my_rating, :only_integer => true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 5
+  validates_numericality_of :my_rating, :only_integer => true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 5, :allow_nil => true
   validates_presence_of :user_id
   validate :user_exists
   validates_presence_of :restaurant_id

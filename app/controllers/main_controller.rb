@@ -9,7 +9,7 @@ class MainController < ApplicationController
 	@rating = Rating.new
 	@restaurants = Restaurant.all
 	
-	#Is this where we would want to display all restaurants and rating values for current user
+	# Is this where we would want to display all restaurants and rating values for current user
     # If no rating value for restaurant x for current user then rating value should be eq to no rated
 	# or do we do this in the main controller?-->
 	
