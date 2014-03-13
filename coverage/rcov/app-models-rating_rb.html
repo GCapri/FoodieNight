@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-rating_rb.html">app/models/rating.rb</a></td>
-            <td class='right_align'><tt>26</tt></td>
-            <td class='right_align'><tt>14</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>92.31%</tt></div>
+            <td class='right_align'><tt>28</tt></td>
+            <td class='right_align'><tt>17</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>92.86%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:92px"></div>
-        <div class="uncovered" style="width:8px"></div>
+        <div class="covered" style="width:93px"></div>
+        <div class="uncovered" style="width:7px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>85.71%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>88.24%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:86px"></div>
-        <div class="uncovered" style="width:14px"></div>
+        <div class="covered" style="width:88px"></div>
+        <div class="uncovered" style="width:12px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -60,7 +60,7 @@
           <td><pre><a name="line4">4</a>   belongs_to :restaurant</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line5">5</a>   validates_numericality_of :my_rating, :only_integer =&gt; true, :greater_than_or_equal_to =&gt; 1, :less_than_or_equal_to =&gt; 5</pre></td>
+          <td><pre><a name="line5">5</a>   validates_numericality_of :my_rating, :only_integer =&gt; true, :greater_than_or_equal_to =&gt; 1, :less_than_or_equal_to =&gt; 5, :allow_nil =&gt; true</pre></td>
         </tr>
         <tr class="marked">
           <td><pre><a name="line6">6</a>   validates_presence_of :user_id</pre></td>
@@ -78,60 +78,66 @@
           <td><pre><a name="line10">10</a>   </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line11">11</a>   def get_restaurant_ratings(user_id)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line12">12</a> 	 #TODO Get restaurant ID, rating value for users ID; Return this as a Hash Array which maps restaurant ID to rating value </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line13">13</a> 	 </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line14">14</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line15">15</a>   </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line16">16</a>   protected</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line17">17</a>   </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line18">18</a>   def user_exists</pre></td>
+          <td><pre><a name="line11">11</a>   def self.scope_restaurant_id(rest_id)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line19">19</a>     errors.add(:user_id, &quot;doesn't exist&quot;) unless User.exists?(user_id)</pre></td>
+          <td><pre><a name="line12">12</a>     where(:restaurant_id =&gt; rest_id)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line20">20</a> 	#validates that the userid is valid, meaning refers to the user table in the db to validate that userid exists</pre></td>
+          <td><pre><a name="line13">13</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line22">22</a>   </pre></td>
+          <td><pre><a name="line14">14</a>   </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line23">23</a>   def restaurant_exists</pre></td>
+          <td><pre><a name="line15">15</a>   def self.scope_user_id(u_id)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line24">24</a>     errors.add(:restaurant_id, &quot;doesn't exist&quot;) unless Restaurant.exists?(restaurant_id)</pre></td>
+          <td><pre><a name="line16">16</a>     where(:user_id =&gt; u_id)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line25">25</a> 	#validates that the restaurant_id is valid, meaning refers to the user table in the db to validate that rest..id exists</pre></td>
+          <td><pre><a name="line17">17</a>   end</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line18">18</a>   protected</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a>   end</pre></td>
+          <td><pre><a name="line19">19</a>   </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line20">20</a>   def user_exists</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line21">21</a>     errors.add(:user_id, &quot;doesn't exist&quot;) unless User.exists?(user_id)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line27">27</a> end</pre></td>
+          <td><pre><a name="line22">22</a> 	#validates that the userid is valid, meaning refers to the user table in the db to validate that userid exists</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line23">23</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line24">24</a>   </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line25">25</a>   def restaurant_exists</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line26">26</a>     errors.add(:restaurant_id, &quot;doesn't exist&quot;) unless Restaurant.exists?(restaurant_id)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line27">27</a> 	#validates that the restaurant_id is valid, meaning refers to the user table in the db to validate that rest..id exists</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line28">28</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line29">29</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2013-12-06 21:04:23 -0800 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2014-03-09 19:08:27 -0700 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

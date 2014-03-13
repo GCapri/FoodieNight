@@ -1,2 +1,3 @@
 class Ranking < ActiveRecord::Base
+# Calculate that rating values ....
 end

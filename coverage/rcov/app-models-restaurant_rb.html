@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-restaurant_rb.html">app/models/restaurant.rb</a></td>
-            <td class='right_align'><tt>7</tt></td>
-            <td class='right_align'><tt>5</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>21</tt></td>
+            <td class='right_align'><tt>9</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>85.71%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:86px"></div>
+        <div class="uncovered" style="width:14px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>66.67%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:67px"></div>
+        <div class="uncovered" style="width:33px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -68,13 +68,55 @@
         <tr class="inferred">
           <td><pre><a name="line7">7</a> </pre></td>
         </tr>
+        <tr class="marked">
+          <td><pre><a name="line8">8</a>    def get_rating_value_for_restaurant</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a> 	rating = Rating.scope_restaurant_id(self.id).scope_user_id(current_user.id).first</pre></td>
+        </tr>
         <tr class="inferred">
-          <td><pre><a name="line8">8</a> end</pre></td>
+          <td><pre><a name="line10">10</a> 	#Scope is used to filter the rows in the db based on the variables passed</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line11">11</a> 	#Retrieves rating value(if any) for the current user and restaurant id that exists in the rating table</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line12">12</a> 	#This code will return nil if there isn't a rating for a specific restaurant ID</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a> 	if rating</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line14">14</a> 	# if rating is not nil</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line15">15</a> 	  return rating.my_rating</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line16">16</a> 	else</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line17">17</a> 	  return nil</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a> 	  #This will be returned in the event that nil is returned.  This object will be in memory</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line19">19</a> 	  #Latest Update ... not using this code at this time 12/14</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line20">20</a> 	end	 </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line21">21</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line22">22</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2013-12-06 21:04:23 -0800 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2014-03-09 19:08:27 -0700 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

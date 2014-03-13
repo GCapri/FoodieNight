@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-main_controller_rb.html">app/controllers/main_controller.rb</a></td>
-            <td class='right_align'><tt>53</tt></td>
-            <td class='right_align'><tt>24</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>64.15%</tt></div>
+            <td class='right_align'><tt>58</tt></td>
+            <td class='right_align'><tt>26</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>63.79%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:64px"></div>
         <div class="uncovered" style="width:36px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>20.83%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>19.23%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:21px"></div>
-        <div class="uncovered" style="width:79px"></div>
+        <div class="covered" style="width:19px"></div>
+        <div class="uncovered" style="width:81px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -57,7 +57,7 @@
           <td><pre><a name="line3">3</a>   # GET /users</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line4">4</a>   # GET /users.json</pre></td>
+          <td><pre><a name="line4">4</a>   # GET /users.json#</pre></td>
         </tr>
         <tr class="marked">
           <td><pre><a name="line5">5</a>   def index</pre></td>
@@ -66,153 +66,168 @@
           <td><pre><a name="line6">6</a>     #@users = User.all  - Need to update to include the logged in user info only</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line7">7</a> 	#@user = specific user - Look this info up from he session/Cookies ... @user = User.find(params[:id])</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line8">8</a> 	#@restaurant_ratings = Rating.get_restaurant_ratings(user_id)</pre></td>
+          <td><pre><a name="line7">7</a> 	#@restaurant_ratings = Rating.get_restaurant_ratings(user_id)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line9">9</a> 	@rating = Rating.new</pre></td>
+          <td><pre><a name="line8">8</a> 	get_current_user</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line10">10</a> 	@restaurants = Restaurant.all</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line11">11</a> </pre></td>
+          <td><pre><a name="line9">9</a> 	Rails.logger.debug(&quot;current user = #{@current_user.inspect}&quot;)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line12">12</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line10">10</a> 	@rating = Rating.new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line13">13</a>       format.html # index.html.erb</pre></td>
+          <td><pre><a name="line11">11</a> 	@restaurants = Restaurant.all</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line12">12</a> 	</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line13">13</a> 	# Is this where we would want to display all restaurants and rating values for current user</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line14">14</a>     # If no rating value for restaurant x for current user then rating value should be eq to no rated</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line15">15</a> 	# or do we do this in the main controller?--&gt;</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line16">16</a> 	</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line14">14</a>       format.json { render json: @users }</pre></td>
+          <td><pre><a name="line17">17</a>     respond_to do |format|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line18">18</a>       format.html # index.html.erb</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line19">19</a>       format.json { render json: @users }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a>     end</pre></td>
+          <td><pre><a name="line20">20</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line16">16</a>   end</pre></td>
+          <td><pre><a name="line21">21</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line17">17</a>   </pre></td>
+          <td><pre><a name="line22">22</a>   </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a>   # GET /welcome.html - What user would type in</pre></td>
+          <td><pre><a name="line23">23</a>   # GET /welcome.html - What user would type in</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line19">19</a>   # GET /users.json</pre></td>
+          <td><pre><a name="line24">24</a>   # GET /users.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line20">20</a>    def welcome</pre></td>
+          <td><pre><a name="line25">25</a>    def welcome</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a> </pre></td>
+          <td><pre><a name="line26">26</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line22">22</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line27">27</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line23">23</a>       format.html # welcome.html.erb - What files are being rendered</pre></td>
+          <td><pre><a name="line28">28</a>       format.html # welcome.html.erb - What files are being rendered</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line24">24</a>       format.json { render json: @users }</pre></td>
+          <td><pre><a name="line29">29</a>       format.json { render json: @users }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line25">25</a>     end</pre></td>
+          <td><pre><a name="line30">30</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a>   end</pre></td>
+          <td><pre><a name="line31">31</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line27">27</a>   </pre></td>
+          <td><pre><a name="line32">32</a>   </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line28">28</a>   # GET /users/new</pre></td>
+          <td><pre><a name="line33">33</a>   # GET /users/new</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line29">29</a>   # GET /users/new.json</pre></td>
+          <td><pre><a name="line34">34</a>   # GET /users/new.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line30">30</a>   def new</pre></td>
+          <td><pre><a name="line35">35</a>   def new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line31">31</a>     @user = User.new</pre></td>
+          <td><pre><a name="line36">36</a>     @user = User.new</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line32">32</a> </pre></td>
+          <td><pre><a name="line37">37</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line33">33</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line38">38</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line34">34</a>       format.html # new.html.erb</pre></td>
+          <td><pre><a name="line39">39</a>       format.html # new.html.erb</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line35">35</a>       format.json { render json: @user }</pre></td>
+          <td><pre><a name="line40">40</a>       format.json { render json: @user }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line36">36</a>     end</pre></td>
+          <td><pre><a name="line41">41</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line37">37</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line38">38</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line39">39</a>   # POST /users</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line40">40</a>   # POST /users.json</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line41">41</a>   def create</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line42">42</a>     @user = User.new(params[:user])</pre></td>
+          <td><pre><a name="line42">42</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line43">43</a> </pre></td>
         </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line44">44</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line45">45</a>       if @user.save</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line46">46</a>         format.html { redirect_to @user, notice: 'Request was successfully submitted.' }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line47">47</a>         format.json { render json: @user, status: :created, location: @user}</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line44">44</a>   # POST /users</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line48">48</a>       else</pre></td>
+          <td><pre><a name="line45">45</a>   # POST /users.json</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line46">46</a>   def create</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line49">49</a>         format.html { render action: &quot;new&quot; }</pre></td>
+          <td><pre><a name="line47">47</a>     @user = User.new(params[:user])</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line48">48</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line50">50</a>         format.json { render json: @user.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line49">49</a>     respond_to do |format|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line50">50</a>       if @user.save</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line51">51</a>         format.html { redirect_to @user, notice: 'Request was successfully submitted.' }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line52">52</a>         format.json { render json: @user, status: :created, location: @user}</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line51">51</a>       end</pre></td>
+          <td><pre><a name="line53">53</a>       else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line54">54</a>         format.html { render action: &quot;new&quot; }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line55">55</a>         format.json { render json: @user.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line52">52</a>     end</pre></td>
+          <td><pre><a name="line56">56</a>       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line53">53</a>   end</pre></td>
+          <td><pre><a name="line57">57</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line54">54</a> end</pre></td>
+          <td><pre><a name="line58">58</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line59">59</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2013-12-06 21:04:23 -0800 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2014-03-09 19:08:27 -0700 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

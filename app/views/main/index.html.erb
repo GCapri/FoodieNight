@@ -20,7 +20,7 @@ on that object.  The kind of object it is .. is a model object-->
   <tr>
     <td><%= link_to restaurant.restaurant_name, restaurant.restaurant_url %></td>
     <td><%= select("rating", :my_rating, options_for_select([['Good', 1], ['Ok', 2], ['Poor', 3]], get_rating_value_for_restaurant(restaurant)), {:include_blank => 'Select a Rating'}, {:onchange => "document.getElementById(#{restaurant.id}).submit();"}) %></td>
-	
+	<!--Call Class Method defined in Ratings Model ... and replace stuff in ()-->
   </tr>
 <% end %>
 <% end %>

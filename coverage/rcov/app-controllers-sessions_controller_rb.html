@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-sessions_controller_rb.html">app/controllers/sessions_controller.rb</a></td>
-            <td class='right_align'><tt>28</tt></td>
-            <td class='right_align'><tt>14</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>64.29%</tt></div>
+            <td class='right_align'><tt>29</tt></td>
+            <td class='right_align'><tt>15</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>62.07%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:64px"></div>
-        <div class="uncovered" style="width:36px"></div>
+        <div class="covered" style="width:62px"></div>
+        <div class="uncovered" style="width:38px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>28.57%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>26.67%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:29px"></div>
-        <div class="uncovered" style="width:71px"></div>
+        <div class="covered" style="width:27px"></div>
+        <div class="uncovered" style="width:73px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -95,49 +95,52 @@
         <tr class="uncovered">
           <td><pre><a name="line16">16</a> 		 Rails.logger.debug(&quot;success&quot;)</pre></td>
         </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line17">17</a> 		 session[:user_id]= @user.id</pre></td>
+        </tr>
         <tr class="inferred">
-          <td><pre><a name="line17">17</a> 	    # format.html { redirect_to @user, notice: 'Welcome to the Saturday Night Foodie Night Site.' }</pre></td>
+          <td><pre><a name="line18">18</a> 	    # format.html { redirect_to @user, notice: 'Welcome to the Saturday Night Foodie Night Site.' }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line18">18</a> 		  format.html { redirect_to main_index_path} </pre></td>
+          <td><pre><a name="line19">19</a> 		  format.html { redirect_to main_index_path} </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line19">19</a> 	  else</pre></td>
+          <td><pre><a name="line20">20</a> 	  else</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line20">20</a> 	    # Create an error message and re-render the signin form.</pre></td>
+          <td><pre><a name="line21">21</a> 	    # Create an error message and re-render the signin form.</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line21">21</a> 		Rails.logger.debug(&quot; not success&quot;)</pre></td>
+          <td><pre><a name="line22">22</a> 		Rails.logger.debug(&quot; not success&quot;)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line22">22</a> 	    format.html { render action: &quot;new&quot; }</pre></td>
+          <td><pre><a name="line23">23</a> 	    format.html { render action: &quot;new&quot; }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a> 	  end</pre></td>
+          <td><pre><a name="line24">24</a> 	  end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line24">24</a>     end</pre></td>
+          <td><pre><a name="line25">25</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line25">25</a>   end   </pre></td>
+          <td><pre><a name="line26">26</a>   end   </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a>   </pre></td>
+          <td><pre><a name="line27">27</a>   </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line27">27</a>   def destroy</pre></td>
+          <td><pre><a name="line28">28</a>   def destroy</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line28">28</a>   end</pre></td>
+          <td><pre><a name="line29">29</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line29">29</a> end</pre></td>
+          <td><pre><a name="line30">30</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2013-12-06 21:04:23 -0800 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2014-03-09 19:08:27 -0700 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>
