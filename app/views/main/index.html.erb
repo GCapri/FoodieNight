@@ -19,8 +19,9 @@ on that object.  The kind of object it is .. is a model object-->
 <%= form_for(get_rating_for_restaurant(restaurant), :html => { :id => restaurant.id }) do |f| %>
   <tr>
     <td><%= link_to restaurant.restaurant_name, restaurant.restaurant_url %></td>
-    <td><%= select("rating", :my_rating, options_for_select([['Good', 1], ['Ok', 2], ['Poor', 3]], get_rating_value_for_restaurant(restaurant)), {:include_blank => 'Select a Rating'}, {:onchange => "document.getElementById(#{restaurant.id}).submit();"}) %></td>
-	<!--Call Class Method defined in Ratings Model ... and replace stuff in ()-->
+	<td><%= select("rating", :my_rating, options_for_select(Rating.value_mapping, get_rating_value_for_restaurant(restaurant)), {:include_blank => 'Select a Rating'}, {:onchange => "document.getElementById(#{restaurant.id}).submit();"}) %></td>
+	<!--New td makes a call to a class method Total_Ranking_Value and displays it-->
+	<!--very simply to display .. events -->
   </tr>
 <% end %>
 <% end %>

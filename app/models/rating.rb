@@ -14,6 +14,20 @@ class Rating < ActiveRecord::Base
   def self.scope_user_id(u_id)
     where(:user_id => u_id)
   end
+  
+  def self.value_mapping
+    return [['Good', 1], ['Ok', 2], ['Sad', 3]]
+  end
+  
+# When a new row is created in the Ratings Table
+# Get Restaurant_ID and My_Rating_Value
+# Add My_Rating_Value to Total_Rating_Value for that Restaurant_ID
+# 
+  def self.ranking_value
+# This method is going loop over all the ratings rows for a given restaurant_ID and sum up and return all rating values
+# each loops ... self.scope ... restaurant_id
+  end
+  
   protected
   
   def user_exists

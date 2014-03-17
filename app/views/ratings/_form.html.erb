@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :my_rating %><br />
-	<%= f.select(:my_rating,options_for_select([['Good', 1], ['Ok', 2], ['Poor', 3]])) %>
+	<%= f.select(:my_rating,options_for_select(Rating.value_mapping)) %>
   </div>
   <div class="field">
     <%= f.label :restaurant_id %><br />
