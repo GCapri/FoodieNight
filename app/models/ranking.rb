@@ -1,7 +1,4 @@
 class Ranking < ActiveRecord::Base
-# Calculate that rating values ....
+# Calculate that ranking values in rating class
 
-# When a new row is created in the Ratings Table
-# Get Restaurant_ID and My_Rating_Value
-# Add My_Rating_Value to Total_Rating_Value for each Restaurant
 end

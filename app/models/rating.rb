@@ -17,6 +17,8 @@ class Rating < ActiveRecord::Base
   
   def self.value_mapping
     return [['Good', 1], ['Ok', 2], ['Sad', 3]]
+	return [['Good', 1], ['Ok', 2], ['Sad', 3]]
+	
   end
   
 # When a new row is created in the Ratings Table
@@ -24,8 +26,23 @@ class Rating < ActiveRecord::Base
 # Add My_Rating_Value to Total_Rating_Value for that Restaurant_ID
 # 
   def self.ranking_value
-# This method is going loop over all the ratings rows for a given restaurant_ID and sum up and return all rating values
-# each loops ... self.scope ... restaurant_id
+# This method is going loop over all the ratings rows for a given restaurant_ID and sum up and return 
+# Rating.sum("my_ratings").where(restaurant_id: '(variable)'
+    
+#   results = Rating.sum("my_rating")  * This will return the total rating value of all restaurants
+#   results = Rating.where(:restaurant_id => '3').sum("my_rating") * This will return the total rating value for restaurant_id 3
+    results = Rating.scope_restaurant_id(2).sum("my_rating")
+
+    return results
+	  
+#values = Meter.sum(:value, :group => :read_time)
+#values.each do |read_time, value|
+#  aggregate_meter = Meter.new(:read_time => read_time, :value => value, :resource_id => 3)
+#  @aggregates_meter.push(aggregate_meter)
+#end	
+	
+	
+	
   end
   
   protected
