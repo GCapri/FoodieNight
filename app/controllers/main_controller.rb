@@ -7,11 +7,10 @@ class MainController < ApplicationController
 	get_current_user
 	Rails.logger.debug("current user = #{@current_user.inspect}")
 	@rating = Rating.new
-	@restaurants = Restaurant.all
+	@restaurants = Restaurant.order_by_restaurant_name
 	
-	# Is this where we would want to display all restaurants and rating values for current user
-    # If no rating value for restaurant x for current user then rating value should be eq to no rated
-	# or do we do this in the main controller?-->
+	# This is where we prepare data for all restaurants and rating values for current user
+
 	
     respond_to do |format|
       format.html # index.html.erb

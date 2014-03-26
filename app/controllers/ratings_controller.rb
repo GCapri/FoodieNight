@@ -57,10 +57,10 @@ class RatingsController < ApplicationController
   # PUT /ratings/1.json
   def update
     @rating = Rating.find(params[:id])
-
+#   logger.debug("**************************** #{@rating.inspect}")
+#  	logger.debug("**************************** #{params[:rating]}")
     respond_to do |format|
       if @rating.update_attributes(params[:rating])
-   #  TO DO - Need to call the method that we created in the ranking class
         format.html { redirect_to main_index_path, notice: 'Rating was successfully updated.' }
         format.json { head :no_content }
       else

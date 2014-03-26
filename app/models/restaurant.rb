@@ -17,5 +17,9 @@ class Restaurant < ActiveRecord::Base
 	  #This will be returned in the event that nil is returned.  This object will be in memory
 	  #Latest Update ... not using this code at this time 12/14
 	end	 
-  end
+   end
+	
+   def self.order_by_restaurant_name
+	  return Restaurant.order('restaurant_name')
+	end
 end
