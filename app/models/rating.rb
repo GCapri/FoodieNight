@@ -16,7 +16,7 @@ class Rating < ActiveRecord::Base
   end
   
   def self.value_mapping
-    return [['Good', 1], ['Ok', 2], ['Sad', 3]]
+    return [['Excellent', 1],['Good', 2], ['Ok', 3], ['Sad', 4], ['Horrible', 5]]
 #   TO DO provide the correct mapping values	
   end
   
