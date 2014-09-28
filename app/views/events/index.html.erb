@@ -12,8 +12,8 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.event_date %></td>
-    <td><%= event.deadline_date %></td>
+    <td><%= format_time(event.event_date) %></td>
+    <td><%= format_time(event.deadline_date) %></td>
     <td><%= event.restaurant_id %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
