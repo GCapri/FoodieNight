@@ -4,10 +4,10 @@
 
 <table>
   <tr>
+    <th>Ranked Order</th>
     <th>Name</th>
     <th>Rating</th>
-	<th>Restaurant Ranking Value</th>
-    <th></th>
+	  <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -19,10 +19,10 @@ on that object.  The kind of object it is .. is a model object-->
 
 <%= form_for(get_rating_for_restaurant(restaurant), :html => { :id => restaurant.id }) do |f| %>
   <tr>
+    <td><%= Rating.ranking_value(restaurant.id) %></td>
     <td><%= link_to restaurant.restaurant_name, restaurant.restaurant_url %></td>
 	<td><%= select("rating", :my_rating, options_for_select(Rating.value_mapping, get_rating_value_for_restaurant(restaurant)), {:include_blank => 'Select a Rating'}, {:onchange => "document.getElementById(#{restaurant.id}).submit();"}) %></td>
 	<!--New td makes a call to a class method Total_Ranking_Value and displays it-->
-	<td><%= Rating.ranking_value(restaurant.id) %></td>
   </tr>
 <% end %>
 <% end %>
