@@ -2,7 +2,7 @@ class MainController < ApplicationController
   # GET /users
   # GET /users.json#
   def index
-    #@users = User.all  - Need to update to include the logged in user info only
+    # TODO @users = User.all  - Need to update to include the logged in user info only
 	#@restaurant_ratings = Rating.get_restaurant_ratings(user_id)
 	get_current_user
 	Rails.logger.debug("current user = #{@current_user.inspect}")
