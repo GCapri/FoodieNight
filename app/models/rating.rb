@@ -17,7 +17,7 @@ class Rating < ActiveRecord::Base
   
   def self.value_mapping
     return [['Excellent', 1],['Good', 2], ['Ok', 3], ['Sad', 4], ['Horrible', 5]]
-#   TO DO provide the correct mapping values	
+#   TO DO provide the correct mapping values for text
   end
   
 # When a new row is created in the Ratings Table
