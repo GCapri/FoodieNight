@@ -28,7 +28,7 @@ describe Rating do
   it "validation when user_id doesn't exist" do
 	rating = FactoryGirl.build(:rating, {:user_id => 13 })
 	rating.should_not be_valid
-# Add tests for the restaurant id	
+# TODO Add tests for the restaurant id	
   end
 end
   
